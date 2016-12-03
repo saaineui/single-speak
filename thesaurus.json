@@ -1,0 +1,20 @@
+{
+	[
+		{
+			find: "alt(\-|\s)right",
+			replace: "white supremacist right"
+		},
+		{
+			find: "locker room talk",
+			replace: "unwanted advances from a Hollywood celebrity talk"
+		},
+		{
+			find: "racially(\-|\s)(charged|inflammatory)",
+			replace: "race-baiting"
+		},
+		{
+			find: "anti-establishment",
+			replace: "demagogic"
+		},
+	]
+}

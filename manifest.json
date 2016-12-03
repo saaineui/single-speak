@@ -1,16 +1,22 @@
 {
-  "name": "Broken Links",
-  "version": "1.1",
-  "description": "Extends the Developer Tools, adding an audit category that finds broken links on the inspected page.",
-  "background": {
-    "scripts": ["background.js"]
+  "name": "Single Speak",
+  "version": "1.0",
+  "description": "Chrome extension to replace euphemisms with clear terminology.",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html",
+    "default_title": "Single Speak details"
   },
-  "devtools_page": "devtools.html",
   "permissions":  [
-    "experimental",
-    "tabs",
-    "http://*/*",
-    "https://*/*"
+    "activeTab",
+    "https://ajax.googleapis.com/"
+  ],
+  "content_scripts": [
+		{
+			"matches": ["*://*/*"],
+			"js": ["content.js"],
+			"run_at": "document_end"
+		}
   ],
   "manifest_version": 2
 }
