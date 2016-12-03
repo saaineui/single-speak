@@ -55,16 +55,28 @@ function handleText(v)
 			paste: "White supremacist right"
 		},
 		{
-			cut: /\blocker room talk\b/g,
-			paste: "unwanted advances from a Hollywood celebrity talk"
+			cut: /\b(l|L)ocker(\-|\s)room talk\b/g,
+			paste: "Hollywood studio parking lot talk"
+		},
+		{
+			cut: /\bLocker(\-|\s)Room Talk\b/g,
+			paste: "Hollywood Studio Parking Lot Talk"
 		},
 		{
 			cut: /\bracially(\-|\s)(charged|inflammatory)\b/g,
 			paste: "race-baiting"
 		},
 		{
+			cut: /\bRacially(\-|\s)(charged|Charged|inflammatory|Inflammatory)\b/g,
+			paste: "Race-baiting"
+		},
+		{
 			cut: /\banti-establishment\b/g,
 			paste: "demagogic"
+		},
+		{
+			cut: /\bAnti-(e|E)stablishment\b/g,
+			paste: "Demagogic"
 		}
 	];
 	

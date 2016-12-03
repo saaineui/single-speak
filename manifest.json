@@ -1,16 +1,12 @@
 {
   "name": "Single Speak",
   "version": "1.0",
-  "description": "Chrome extension to replace euphemisms with clear terminology.",
+  "description": "Replace known euphemisms in news stories and website copy with clear terminology.",
   "browser_action": {
     "default_icon": "icon.png",
     "default_popup": "popup.html",
-    "default_title": "Single Speak details"
+    "default_title": "Single Speak: how to submit"
   },
-  "permissions":  [
-    "activeTab",
-    "https://ajax.googleapis.com/"
-  ],
   "content_scripts": [
 		{
 			"matches": ["*://*/*"],
