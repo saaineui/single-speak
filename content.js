@@ -1,15 +1,22 @@
+walk(document.head);
 walk(document.body);
 
 function walk(node) 
 {
-	// I stole this function from https://github.com/panicsteve/cloud-to-butt/ which stole it from:
-	// http://is.gd/mwZp7E
+	// I adapted this function from https://github.com/panicsteve/cloud-to-butt/ and http://is.gd/mwZp7E
 	
 	var child, next;
 	
-	if (node.tagName.toLowerCase() == 'input' || node.tagName.toLowerCase() == 'textarea'
-	    || node.classList.indexOf('ace_editor') > -1) {
-		return;
+	switch ( node.tagName )
+	{ 
+		case 'input':
+			return;
+		case 'textarea':
+			return;
+		case 'title':
+			node.textContent = handleText(node.textContent);
+			return;
+		
 	}
 
 	switch ( node.nodeType )  
@@ -27,21 +34,43 @@ function walk(node)
 			break;
 
 		case 3: // Text node
-			handleText(node);
+			node.nodeValue = handleText(node.nodeValue);
 			break;
 	}
 }
 
-function handleText(textNode) 
+function handleText(v) 
 {
-	var v = textNode.nodeValue;
-
-	v = v.replace(/\balt-right\b/g, "white supremacist right");
-	v = v.replace(/\bAlt-right\b/g, "White supremacist right");
-	v = v.replace(/\bAlt-Right\b/g, "White Supremacist Right");
-	v = v.replace(/\balt right\b/g, "white supremacist right");
-	v = v.replace(/\bAlt right\b/g, "White supremacist right");
-	v = v.replace(/\bAlt Right\b/g, "White Supremacist Right");
+	var thesaurus = [
+		{
+			cut: /\balt(\-|\s)right\b/g,
+			paste: "white supremacist right"
+		},
+		{
+			cut: /\bAlt(\-|\s)Right\b/g,
+			paste: "White Supremacist Right"
+		},
+		{
+			cut: /\bAlt(\-|\s)right\b/g,
+			paste: "White supremacist right"
+		},
+		{
+			cut: /\blocker room talk\b/g,
+			paste: "unwanted advances from a Hollywood celebrity talk"
+		},
+		{
+			cut: /\bracially(\-|\s)(charged|inflammatory)\b/g,
+			paste: "race-baiting"
+		},
+		{
+			cut: /\banti-establishment\b/g,
+			paste: "demagogic"
+		}
+	];
 	
-	textNode.nodeValue = v;
+	for (i=0; i<thesaurus.length; i++) {
+		v = v.replace(thesaurus[i].cut, thesaurus[i].paste);
+	}
+	
+	return v;
 }
