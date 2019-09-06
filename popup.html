@@ -9,15 +9,40 @@
     <title>Single Speak - How to Submit</title>
     <style>
       body {
-        font-family: 'Lucida Grande', 'Segoe UI', Tahoma, 'DejaVu Sans', Arial, sans-serif;
-        font-size: 100%;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
         font-weight: 300;
-        color: #898989;
-        width: 240px;
+        color: #222;
+        width: 250px;
+        padding: 1rem;
       }
       h1 { 
       	font-size: 1.25em;
         font-weight: 300;
+      }
+      label, input {
+        display: block;
+        width: 100%;
+        font-size: 1rem;
+      }
+      label {
+        margin-bottom: 1rem;
+      }
+      input {
+        box-sizing: border-box;
+        padding: 0.5rem;
+      }
+      input[type="submit"] {
+        background: #000;
+        color: #fff;
+        font-weight: 700;
+        border-radius: 5px;
+        border: none;
+      }
+      input[type="submit"]:hover {
+        background: yellow;
+        color: #000;
+        cursor: pointer;
       }
     </style>
 
@@ -30,7 +55,20 @@
   </head>
   <body>
   	<h1><img src="icon.png" alt="Single Speak logo" /><br /> Single Speak</h1>
-  	<p>Submit thesaurus entries <a target="_blank" href="https://github.com/saaineui/single-speak/issues">here</a>.</p>
+  	<p>Add phrase pairs to swap:</p>
+    <form>
+      <p>
+        <label for="cut">
+          Euphemism (i.e. <em>alt-right</em>): 
+          <input name="cut" type="text" />
+        </label>
+        <label for="paste">
+          Replacement (i.e. <em>White supremacist right</em>): 
+          <input name="paste" type="text" />
+        </label>
+      </p>
+      <p><input type="submit" value="Add new pair" /></p>
+    </form>
   </body>
 </html>
 

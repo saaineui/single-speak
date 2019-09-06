@@ -3,7 +3,7 @@ walk(document.body);
 
 function walk(node) 
 {
-	// I adapted this function from https://github.com/panicsteve/cloud-to-butt/ and http://is.gd/mwZp7E
+	// Adapted from https://github.com/panicsteve/cloud-to-butt/ and http://is.gd/mwZp7E
 	
 	var child, next;
 	
@@ -39,50 +39,37 @@ function walk(node)
 	}
 }
 
-function handleText(v) 
+function phraseToRegExp(phrase)
 {
-	var thesaurus = [
-		{
-			cut: /\balt(\-|\s)right\b/g,
-			paste: "white supremacist right"
-		},
-		{
-			cut: /\bAlt(\-|\s)Right\b/g,
-			paste: "White Supremacist Right"
-		},
-		{
-			cut: /\bAlt(\-|\s)right\b/g,
-			paste: "White supremacist right"
-		},
-		{
-			cut: /\b(l|L)ocker(\-|\s)room talk\b/g,
-			paste: "Hollywood studio parking lot talk"
-		},
-		{
-			cut: /\bLocker(\-|\s)Room Talk\b/g,
-			paste: "Hollywood Studio Parking Lot Talk"
-		},
-		{
-			cut: /\bracially(\-|\s)(charged|inflammatory)\b/g,
-			paste: "race-baiting"
-		},
-		{
-			cut: /\bRacially(\-|\s)(charged|Charged|inflammatory|Inflammatory)\b/g,
-			paste: "Race-baiting"
-		},
-		{
-			cut: /\banti-establishment\b/g,
-			paste: "demagogic"
-		},
-		{
-			cut: /\bAnti-(e|E)stablishment\b/g,
-			paste: "Demagogic"
-		}
-	];
-	
-	for (i=0; i<thesaurus.length; i++) {
-		v = v.replace(thesaurus[i].cut, thesaurus[i].paste);
+  phrase = phrase
+             .replace(/\-|\s/g, '(\\-|\\s)')
+             .replace(/'|&rsquo;|’/g, "(\\'|&rsquo;|’)");
+  
+  phrase = `\\b${phrase}\\b`;
+  
+  return new RegExp(phrase, 'gi');
+}
+
+function handleText(nodeValue) 
+{
+  var phrases = [
+    {
+      cut: 'alt-right',
+      paste: 'White supremacist right'
+    },
+    {
+      cut: 'locker room talk',
+      paste: 'Hollywood studio parking lot talk'
+    }
+  ];
+
+	for (i = 0; i < phrases.length; i++) 
+  {
+		nodeValue = nodeValue.replace(
+      phraseToRegExp(phrases[i].cut), 
+      phrases[i].paste
+    );
 	}
 	
-	return v;
+	return nodeValue;
 }
