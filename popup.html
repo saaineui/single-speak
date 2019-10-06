@@ -32,17 +32,41 @@
         box-sizing: border-box;
         padding: 0.5rem;
       }
-      input[type="submit"] {
-        background: #000;
-        color: #fff;
+      input.phrase-pair-submit {
+        background: #ffe000;
+        color: #000;
         font-weight: 700;
         border-radius: 5px;
         border: none;
+        transition: all 300ms ease-in-out;
       }
-      input[type="submit"]:hover {
-        background: yellow;
-        color: #000;
+      input.phrase-pair-submit:hover {
+        background: #efefef;
         cursor: pointer;
+      }
+      .tabs-container {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .tab-content {
+        display: none;
+      }
+      .tab-content[data-tab-status="active"] {
+        display: block;
+      }
+      .tab {
+        display: inline-block;
+        margin: 2px;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      .tab:hover {
+        color: #ccc;
+        transition: all 300ms ease-in-out;
+      }
+      .tab[data-tab-status="active"] {
+        display: none;
       }
     </style>
 
@@ -55,20 +79,40 @@
   </head>
   <body>
   	<h1><img src="icon.png" alt="Single Speak logo" /><br /> Single Speak</h1>
-  	<p>Add phrase pairs to swap:</p>
-    <form>
-      <p>
-        <label for="cut">
-          Euphemism (i.e. <em>alt-right</em>): 
-          <input name="cut" type="text" />
-        </label>
-        <label for="paste">
-          Replacement (i.e. <em>White supremacist right</em>): 
-          <input name="paste" type="text" />
-        </label>
-      </p>
-      <p><input type="submit" value="Add new pair" /></p>
-    </form>
+    <ul class="js-tabs-container tabs-container">
+      <li class="js-tab tab" data-tab-target="phrase-pairs-form" data-tab-status="active">
+        Add a phrase pair
+      </li>
+      <li class="js-tab tab" data-tab-target="phrase-pairs-list">
+        Manage phrase pairs
+      </li>
+    </ul>
+    <section class="js-tab-content tab-content" data-tab="phrase-pairs-form"  data-tab-status="active">
+      <p>Add a phrase pair to swap:</p>
+      <form class="js-phrase-pair-form">
+        <p>
+          <label for="cut">
+            Euphemism (i.e. <em>alt-right</em>): 
+            <input class="js-cut-field" name="cut" type="text" required />
+          </label>
+          <label for="paste">
+            Replacement (i.e. <em>white supremacist right</em>): 
+            <input class="js-paste-field" name="paste" type="text" required />
+          </label>
+        </p>
+        <p><input class="phrase-pair-submit" type="submit" value="Add new pair" /></p>
+      </form>
+    </section>
+    <section class="js-tab-content tab-content" data-tab="phrase-pairs-list">
+      <p>All phrase pairs:</p>
+      <table>
+        <tr>
+          <td>test</td>
+          <td>test</td>
+        </tr>
+      </table>
+    </section>
+    <script type="text/javascript" src="popup.js"></script>
   </body>
 </html>
 
