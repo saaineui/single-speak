@@ -47,7 +47,8 @@
       .tabs-container {
         list-style: none;
         margin: 0;
-        padding: 0;
+        padding: 0 0 6px;
+        border-bottom: 1px solid #484848;
       }
       .tab-content {
         display: none;
@@ -56,8 +57,9 @@
         display: block;
       }
       .tab {
+        color: #484848;
         display: inline-block;
-        margin: 2px;
+        margin: 2px 10px 2px 0;
         text-decoration: underline;
         cursor: pointer;
       }
@@ -66,15 +68,13 @@
         transition: color 300ms ease-in-out;
       }
       .tab[data-tab-status="active"] {
-        color: #000;
+        color: #484848;
         cursor: auto;
         font-weight: 700;
         text-decoration: none;
       }
-      tr {
-        border-bottom: 1px solid black;
-      }
       th, td {
+        border-bottom: 1px solid black;
         padding: 3px;
         text-align: left;
       }
@@ -110,7 +110,7 @@
       </li>
     </ul>
     <section class="js-tab-content tab-content" data-tab="phrase-pairs-list" data-tab-status="active">
-      <p>All phrase pairs:</p>
+      <h2>All phrase pairs:</h2>
       <table class="phrase-pairs-list-table">
         <thead>
           <tr>
@@ -124,7 +124,7 @@
       </table>
     </section>
     <section class="js-tab-content tab-content" data-tab="phrase-pairs-form">
-      <p>Add a phrase pair to swap:</p>
+      <h2>Add a phrase pair to swap:</h2>
       <form class="js-phrase-pair-form">
         <p>
           <label for="cut">
