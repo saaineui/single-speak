@@ -12,11 +12,9 @@ Inspired by New Yorker essay by Chimamanda Adichie: http://www.newyorker.com/cul
  
 ### Sample Articles to View
 
- - http://www.nytimes.com/2016/12/02/opinion/sunday/what-the-alt-right-really-means.html
- - http://www.latimes.com/nation/politics/trailguide/la-na-trailguide-updates-what-is-the-alt-right-a-refresher-1479169663-htmlstory.html
  - http://www.vox.com/world/2016/11/28/13716038/alt-right-policy-platform-trump
- - http://www.nytimes.com/2016/11/14/us/politics/in-twist-trump-victory-could-defang-anti-establishment-gop-caucus.html
- - https://www.urbandictionary.com/define.php?term=Locker%20Room%20Talk
+ - http://www.dailynebraskan.com/news/professors-look-into-alt-right-meme-culture-and-its-effects/article_2bbe5a88-e643-11e9-8153-330fcf488790.html
+ - http://www.nytimes.com/2016/12/02/opinion/sunday/what-the-alt-right-really-means.html
  - http://time.com/4530118/donald-trump-locker-room-talk-college/
  - http://www.nationalreview.com/corner/441006/did-donald-trump-do-more-locker-room-talk
  

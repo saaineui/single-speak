@@ -13,7 +13,7 @@
         font-size: 16px;
         font-weight: 300;
         color: #222;
-        width: 250px;
+        width: 360px;
         padding: 1rem;
       }
       h1 { 
@@ -63,10 +63,32 @@
       }
       .tab:hover {
         color: #ccc;
-        transition: all 300ms ease-in-out;
+        transition: color 300ms ease-in-out;
       }
       .tab[data-tab-status="active"] {
-        display: none;
+        color: #000;
+        cursor: auto;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      tr {
+        border-bottom: 1px solid black;
+      }
+      th, td {
+        padding: 3px;
+        text-align: left;
+      }
+      td {
+        font-size: 12px;
+      }
+      .phrase-pairs-list-table td span {
+        font-weight: 700;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      .phrase-pairs-list-table td span:hover {
+        color: #ccc;
+        transition: all 300ms ease-in-out;
       }
     </style>
 
@@ -80,14 +102,28 @@
   <body>
   	<h1><img src="icon.png" alt="Single Speak logo" /><br /> Single Speak</h1>
     <ul class="js-tabs-container tabs-container">
-      <li class="js-tab tab" data-tab-target="phrase-pairs-form" data-tab-status="active">
-        Add a phrase pair
-      </li>
-      <li class="js-tab tab" data-tab-target="phrase-pairs-list">
+      <li class="js-tab tab" data-tab-target="phrase-pairs-list" data-tab-status="active">
         Manage phrase pairs
       </li>
+      <li class="js-tab tab" data-tab-target="phrase-pairs-form">
+        Add a phrase pair
+      </li>
     </ul>
-    <section class="js-tab-content tab-content" data-tab="phrase-pairs-form"  data-tab-status="active">
+    <section class="js-tab-content tab-content" data-tab="phrase-pairs-list" data-tab-status="active">
+      <p>All phrase pairs:</p>
+      <table class="phrase-pairs-list-table">
+        <thead>
+          <tr>
+            <th>Euphemism</th>
+            <th>Replacememt</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody class="js-phrase-pairs-list-table-body">
+        </tbody>
+      </table>
+    </section>
+    <section class="js-tab-content tab-content" data-tab="phrase-pairs-form">
       <p>Add a phrase pair to swap:</p>
       <form class="js-phrase-pair-form">
         <p>
@@ -102,15 +138,6 @@
         </p>
         <p><input class="phrase-pair-submit" type="submit" value="Add new pair" /></p>
       </form>
-    </section>
-    <section class="js-tab-content tab-content" data-tab="phrase-pairs-list">
-      <p>All phrase pairs:</p>
-      <table>
-        <tr>
-          <td>test</td>
-          <td>test</td>
-        </tr>
-      </table>
     </section>
     <script type="text/javascript" src="popup.js"></script>
   </body>
