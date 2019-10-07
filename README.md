@@ -7,14 +7,14 @@ Inspired by New Yorker essay by Chimamanda Adichie: http://www.newyorker.com/cul
 
 ### Sample Replacements
 
- - alt-right -> white supremacist right
- - locker room talk -> Hollywood studio parking lot talk
+alt-right -> white supremacist right
  
-### Sample Articles to View
-
+ - https://www.nytimes.com/search?query=alt-right
  - http://www.vox.com/world/2016/11/28/13716038/alt-right-policy-platform-trump
  - http://www.dailynebraskan.com/news/professors-look-into-alt-right-meme-culture-and-its-effects/article_2bbe5a88-e643-11e9-8153-330fcf488790.html
- - http://www.nytimes.com/2016/12/02/opinion/sunday/what-the-alt-right-really-means.html
+
+locker room talk -> Hollywood studio parking lot talk
+
  - http://time.com/4530118/donald-trump-locker-room-talk-college/
  - http://www.nationalreview.com/corner/441006/did-donald-trump-do-more-locker-room-talk
  

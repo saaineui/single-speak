@@ -14,7 +14,7 @@
 		{
 			"matches": ["*://*/*"],
 			"js": ["content.js"],
-			"run_at": "document_end"
+			"run_at": "document_idle"
 		}
   ],
   "manifest_version": 3
